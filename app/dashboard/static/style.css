@@ -1,0 +1,34 @@
+:root { --ok:#2e7d32; --bad:#c62828; --warn:#e65100; --run:#0277bd; --bg:#f5f6f8; }
+* { box-sizing: border-box; }
+body { font-family: system-ui, Segoe UI, Roboto, sans-serif; margin: 0; background: var(--bg); color: #222; }
+header { background: #263238; color: #fff; padding: 12px 24px; display: flex; align-items: center; gap: 24px; }
+header h1 { font-size: 20px; margin: 0; }
+#system { margin-left: auto; font-size: 13px; color: #cfd8dc; }
+main { padding: 24px; max-width: 1000px; margin: 0 auto; }
+table { width: 100%; border-collapse: collapse; background: #fff; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid #e0e0e0; font-size: 14px; }
+th { background: #eceff1; }
+tr.clickable { cursor: pointer; }
+tr.clickable:hover { background: #f3f7fb; }
+.badge { padding: 2px 8px; border-radius: 10px; font-size: 12px; color: #fff; }
+.badge.OK, .badge.COMPLETED { background: var(--ok); }
+.badge.BAD, .badge.FAILED { background: var(--bad); }
+.badge.WARN, .badge.IN_PROGRESS { background: var(--warn); }
+.badge.UNKNOWN, .badge.PENDING { background: #78909c; }
+.counts { display: flex; gap: 16px; margin: 8px 0 16px; }
+.counts span b { font-size: 18px; }
+.stepgrid { display: flex; flex-wrap: wrap; gap: 8px; margin: 8px 0; }
+.step { padding: 6px 10px; border-radius: 6px; font-size: 12px; background: #eceff1; }
+.step.completed { background: #c8e6c9; color: var(--ok); }
+.step.running { background: #b3e5fc; color: var(--run); }
+.step.failed { background: #ffcdd2; color: var(--bad); }
+.step.pending { color: #607d8b; }
+h2 { font-size: 18px; margin: 24px 0 8px; }
+ul.artifacts, ul.logs { list-style: none; padding: 0; }
+li { padding: 4px 0; font-size: 13px; }
+.ok { color: var(--ok); } .no { color: var(--bad); }
+.logline { display: flex; gap: 10px; font-family: Consolas, monospace; font-size: 12px; }
+.lvl.INFO { color: var(--ok); } .lvl.WARNING { color: var(--warn); } .lvl.ERROR { color: var(--bad); }
+pre { background: #263238; color: #cfd8dc; padding: 12px; border-radius: 6px; overflow: auto; font-size: 12px; }
+button { padding: 6px 12px; border: 1px solid #b0bec5; border-radius: 6px; background: #fff; cursor: pointer; }
+button:hover { background: #eceff1; }

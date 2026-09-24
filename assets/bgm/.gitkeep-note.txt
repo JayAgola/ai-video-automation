@@ -1,0 +1,7 @@
+Place royalty-free / licensed background-music MP3 files in this folder.
+
+- Supported: .mp3 .wav .ogg .m4a
+- Do NOT download copyrighted music or use YouTube rips.
+- Suggested source: YouTube Audio Library (download manually).
+- The pipeline selects a track deterministically per project and loops/trims
+  a COPY into projects/<id>/audio/background_music.mp3 (originals untouched).

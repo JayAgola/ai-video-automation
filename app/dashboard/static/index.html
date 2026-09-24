@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>YT001 Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <h1>YT001 Dashboard</h1>
+    <div id="system"></div>
+  </header>
+  <main>
+    <section>
+      <h2>Projects</h2>
+      <div id="counts" class="counts"></div>
+      <table id="projects">
+        <thead>
+          <tr><th>Project</th><th>Topic</th><th>Status</th><th>Step</th><th>Progress</th><th>Updated</th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+      <p id="noprojects" style="display:none">No projects yet.</p>
+    </section>
+    <section id="detail" style="display:none">
+      <h2 id="detail-title"></h2>
+      <div id="detail-body"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>

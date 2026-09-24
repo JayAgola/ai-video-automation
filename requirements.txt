@@ -1,0 +1,12 @@
+ollama>=0.4
+edge-tts>=0.14
+pydub>=0.25
+python-dotenv>=1.0
+pydantic>=2.0
+requests>=2.31
+tenacity>=8.0
+rich>=13.0
+mutagen>=1.45
+Pillow>=10.0
+fastapi>=0.110
+uvicorn>=0.29

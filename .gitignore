@@ -1,0 +1,77 @@
+# ================= Python =================
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+
+# ================= Virtual environments =================
+.venv/
+venv/
+env/
+
+# ================= Testing / coverage =================
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ================= Editors / IDEs =================
+.vscode/
+.idea/
+*.swp
+*~
+
+# ================= OS metadata =================
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# ================= Environment / secrets (never commit) =================
+.env
+.env.*
+!.env.example
+credentials/
+token/
+
+# ================= Agent / local tool metadata =================
+.foundry/
+.ai/project_state.json
+
+# ================= Logs (runtime) =================
+logs/
+*.log
+
+# ================= Generated project data (runtime) =================
+# Keep the folder itself (ProjectManager creates it), ignore its contents.
+projects/*
+!projects/.gitkeep
+
+# ================= Generated caches (runtime) =================
+# Keep the folder itself, ignore audio/images/chunks/research/stock contents.
+cache/*
+!cache/.gitkeep
+
+# ================= Stray generated media at repo root =================
+# Root-scoped on purpose: assets/bgm/*.mp3 and any future assets/** static
+# files are required project assets and must stay committable.
+/*.mp4
+/*.mov
+/*.wav
+/*.mp3
+/*.png
+/*.jpg
+/*.jpeg
+/*.webp
+
+# ================= Temp / backup files =================
+*.tmp
+*.temp
+*.bak
+*.old
+*.orig
+*.rej
+
