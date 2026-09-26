@@ -165,11 +165,9 @@ Human-in-the-loop approval gate on top of the read-only dashboard. **Approval �
 - `PENDING` — final video ready, awaiting human decision (derived for old projects; never persisted until an action).
 - `APPROVED` — explicit human approval (future publishing prerequisite).
 - `REJECTED` — human rejection (note required).
-
 Rules: approval is ONLY via the explicit approve endpoint; nothing auto-approves; `APPROVED`/`REJECTED`
 survive dashboard refresh; every action appends an immutable history entry (`APPROVED|REJECTED|RESET`,
 reviewer, note, timestamp); reset sends APPROVED/REJECTED back to PENDING with a note.
-
 
 
 ### New endpoints
@@ -178,9 +176,7 @@ reviewer, note, timestamp); reset sends APPROVED/REJECTED back to PENDING with a
 - `POST /api/v1/dashboard/projects/{id}/review/approve` — body `{"note": "..."}` (note optional).
 - `POST /api/v1/dashboard/projects/{id}/review/reject` — body `{"note": "..."}` (**note required**, 422 otherwise).
 - `POST /api/v1/dashboard/projects/{id}/review/reset` — body `{"note": "..."}` (optional); APPROVED/REJECTED → PENDING.
-
 `GET /projects` now includes `review_status`; `GET /projects/{id}` includes full `review` + `seo`.
-
 
 
 ### UI
