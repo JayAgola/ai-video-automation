@@ -148,6 +148,7 @@ Config: `DASHBOARD_HOST`, `DASHBOARD_PORT` (`.env`), `LOGS_DIR` for `logs/pipeli
   - `GET /api/v1/dashboard/system` (Ollama reachability check only — no model calls)
   - `GET /` serves the static frontend.
 
+
 ### Behavior
 
 - Consumes existing `projects/*/state.json` via `ProjectManager`; works with any Parts 1–3 project; corrupt/missing state shows "State unavailable" without crashing the list.
@@ -155,10 +156,13 @@ Config: `DASHBOARD_HOST`, `DASHBOARD_PORT` (`.env`), `LOGS_DIR` for `logs/pipeli
 - Security: project IDs validated (`^[A-Za-z0-9][A-Za-z0-9._-]*$`) — path traversal rejected; no secrets/`.env` exposed; no arbitrary file reads.
 - Final video: shows availability + size + duration (from state if recorded, no ffprobe).
 
+
+
 ## Part 4 Prompt 2 — Human Review Workflow (new)
 
 Human-in-the-loop approval gate on top of the read-only dashboard. **Approval ≠ upload** — it only marks
 `review.status = APPROVED` in `state.json`; no YouTube API calls exist yet.
+
 
 ### Review states (stored in `state.json` → `review`)
 - `NOT_READY` — no valid final video (missing/empty/corrupt state); actions disabled.
@@ -168,6 +172,7 @@ Human-in-the-loop approval gate on top of the read-only dashboard. **Approval �
 Rules: approval is ONLY via the explicit approve endpoint; nothing auto-approves; `APPROVED`/`REJECTED`
 survive dashboard refresh; every action appends an immutable history entry (`APPROVED|REJECTED|RESET`,
 reviewer, note, timestamp); reset sends APPROVED/REJECTED back to PENDING with a note.
+
 
 
 ### New endpoints
