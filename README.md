@@ -223,10 +223,14 @@ Service **and** uploader independently enforce: valid project, `final_video.mp4`
 ### Security
 Secrets never appear in API responses, logs, state, dashboard HTML, or Git; project IDs validated; traversal blocked; no shell execution; bounded retries for transient failures.
 
+
+
 ### Setup (real use)
 1. Google Cloud project → enable YouTube Data API v3 → OAuth consent screen → create OAuth client (Desktop/Installed app) → download JSON.
 2. Set in `.env`: `YOUTUBE_UPLOAD_ENABLED=true`, `YOUTUBE_CLIENT_SECRET_FILE=...`, `YOUTUBE_TOKEN_FILE=...`, `YOUTUBE_DEFAULT_PRIVACY=private`.
 3. Dashboard → Connect YouTube → authorize in browser → status shows Connected.
+
+
 
 ### Tests
 `tests/test_p4_youtube.py` (58 cases: config/cred paths, auth states, review-gate 409s, duplicate 409, metadata from SEO, sanitization, API status codes, frontend markers, no-secret-leak checks) — **all PASS; no real OAuth/upload executed**.
