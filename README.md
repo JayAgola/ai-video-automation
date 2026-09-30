@@ -172,7 +172,6 @@ survive dashboard refresh; every action appends an immutable history entry (`APP
 reviewer, note, timestamp); reset sends APPROVED/REJECTED back to PENDING with a note.
 
 
-
 ### New endpoints
 - `GET  /api/v1/dashboard/projects/{id}/video` — serves ONLY that project's `output/final_video.mp4`
   (Range supported, 404 when missing, traversal-safe).
@@ -224,12 +223,10 @@ Service **and** uploader independently enforce: valid project, `final_video.mp4`
 Secrets never appear in API responses, logs, state, dashboard HTML, or Git; project IDs validated; traversal blocked; no shell execution; bounded retries for transient failures.
 
 
-
 ### Setup (real use)
 1. Google Cloud project → enable YouTube Data API v3 → OAuth consent screen → create OAuth client (Desktop/Installed app) → download JSON.
 2. Set in `.env`: `YOUTUBE_UPLOAD_ENABLED=true`, `YOUTUBE_CLIENT_SECRET_FILE=...`, `YOUTUBE_TOKEN_FILE=...`, `YOUTUBE_DEFAULT_PRIVACY=private`.
 3. Dashboard → Connect YouTube → authorize in browser → status shows Connected.
-
 
 
 ### Tests
