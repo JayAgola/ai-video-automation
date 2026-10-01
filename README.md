@@ -172,6 +172,8 @@ survive dashboard refresh; every action appends an immutable history entry (`APP
 reviewer, note, timestamp); reset sends APPROVED/REJECTED back to PENDING with a note.
 
 
+
+
 ### New endpoints
 - `GET  /api/v1/dashboard/projects/{id}/video` — serves ONLY that project's `output/final_video.mp4`
   (Range supported, 404 when missing, traversal-safe).
