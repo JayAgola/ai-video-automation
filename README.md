@@ -155,12 +155,9 @@ Config: `DASHBOARD_HOST`, `DASHBOARD_PORT` (`.env`), `LOGS_DIR` for `logs/pipeli
 - Security: project IDs validated (`^[A-Za-z0-9][A-Za-z0-9._-]*$`) — path traversal rejected; no secrets/`.env` exposed; no arbitrary file reads.
 - Final video: shows availability + size + duration (from state if recorded, no ffprobe).
 
-
-
 ## Part 4 Prompt 2 — Human Review Workflow (new)
 Human-in-the-loop approval gate on top of the read-only dashboard. **Approval ≠ upload** — it only marks
 `review.status = APPROVED` in `state.json`; no YouTube API calls exist yet.
-
 
 ### Review states (stored in `state.json` → `review`)
 - `NOT_READY` — no valid final video (missing/empty/corrupt state); actions disabled.
