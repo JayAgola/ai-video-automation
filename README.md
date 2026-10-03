@@ -49,6 +49,8 @@ narration word count at `SCRIPT_WPS` (2.5 words/s), never from the model's own
 Tests: `python tests/test_script_longform.py` (cases A–L + JSON-mode routing,
 deterministic mocks, no Ollama) and `python tests/test_script_robust.py`.
 
+
+
 - **Research provider abstraction** (`app/research/`): `research_provider.py` Protocol, `test_provider.py`
   (deterministic, clearly labelled **TEST DATA — NOT REAL YOUTUBE DATA**), `youtube_provider.py`
   (official YouTube Data API v3, quota-aware, never scraps/bypasses).
@@ -66,12 +68,16 @@ deterministic mocks, no Ollama) and `python tests/test_script_robust.py`.
   `selected_topic.json`, `seo.json`, `research_report.md` (explains WHY a topic was chosen).
 - Native default niche is **Modern Stoicism + Applied Psychology**, fully configurable.
 
+
+
 ## Scoring formula (documented, internal heuristic)
 ```
 score = 0.25*trend + 0.20*freshness + 0.20*search_intent + 0.15*engagement
         + 0.10*content_gap + 0.10*originality − competition/10
 ```
 Component scores stored on each candidate so users can see WHY it ranked.
+
+
 
 ## Configuration (.env) — new Part 3 keys
 ```
