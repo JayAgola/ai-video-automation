@@ -49,8 +49,6 @@ narration word count at `SCRIPT_WPS` (2.5 words/s), never from the model's own
 Tests: `python tests/test_script_longform.py` (cases A–L + JSON-mode routing,
 deterministic mocks, no Ollama) and `python tests/test_script_robust.py`.
 
-
-
 - **Research provider abstraction** (`app/research/`): `research_provider.py` Protocol, `test_provider.py`
   (deterministic, clearly labelled **TEST DATA — NOT REAL YOUTUBE DATA**), `youtube_provider.py`
   (official YouTube Data API v3, quota-aware, never scraps/bypasses).
@@ -173,8 +171,6 @@ Human-in-the-loop approval gate on top of the read-only dashboard. **Approval �
 Rules: approval is ONLY via the explicit approve endpoint; nothing auto-approves; `APPROVED`/`REJECTED`
 survive dashboard refresh; every action appends an immutable history entry (`APPROVED|REJECTED|RESET`,
 reviewer, note, timestamp); reset sends APPROVED/REJECTED back to PENDING with a note.
-
-
 
 
 ### New endpoints
