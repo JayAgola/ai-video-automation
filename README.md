@@ -75,8 +75,6 @@ score = 0.25*trend + 0.20*freshness + 0.20*search_intent + 0.15*engagement
 ```
 Component scores stored on each candidate so users can see WHY it ranked.
 
-
-
 ## Configuration (.env) — new Part 3 keys
 ```
 CHANNEL_NICHE=Modern Stoicism and Applied Psychology
@@ -131,15 +129,12 @@ python pipeline.py --project video_001 --topic "Your topic"
 
 ## Part 4 Prompt 1 — Dashboard Foundation (new)
 Local web dashboard (read-only; no generation, no upload, no auth yet).
-
-
 ### Run
 
 ```powershell
 python -m app.dashboard.server        # http://127.0.0.1:8000
 ```
 Config: `DASHBOARD_HOST`, `DASHBOARD_PORT` (`.env`), `LOGS_DIR` for `logs/pipeline.log`.
-
 
 ### Pages / APIs
 - Main page: project counts (total/active/completed/failed), project table (id, topic, status, current step, %, scenes, updated), system status line.
