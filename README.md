@@ -93,11 +93,15 @@ TOPIC_COUNT=12
 RESEARCH_QUERIES=stoicism anxiety,stoicism overthinking,...   # optional override
 ```
 
+
+
 ## YouTube API setup (real research)
 1. Create a Google Cloud project, enable YouTube Data API v3, create an API key.
 2. Put it in `.env`: `YOUTUBE_API_KEY=...`, `YOUTUBE_RESEARCH_ENABLED=true`, `RESEARCH_PROVIDER=youtube`, `TEST_RESEARCH_MODE=false`.
 3. Quota is limited (search=100 units, videos=1 unit). The cache and bounded result/query counts keep calls low.
 4. Without a key, research returns `DISABLED/NO_API_KEY` and the system still supports test mode and manual `--topic`.
+
+
 
 ## Run
 ```powershell
@@ -110,6 +114,8 @@ python pipeline.py --research-health
 python pipeline.py --project video_001 --topic "Your topic"
 ```
 `--force-research` / `--force-topic` / `--force-seo` bypass per-step cache (only used deliberately).
+
+
 
 ## Cache / resume
 - Repeated identical research → cache HIT, no API/LLM recall.
