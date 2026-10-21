@@ -94,6 +94,8 @@ RESEARCH_QUERIES=stoicism anxiety,stoicism overthinking,...   # optional overrid
 ```
 
 
+
+
 ## YouTube API setup (real research)
 1. Create a Google Cloud project, enable YouTube Data API v3, create an API key.
 2. Put it in `.env`: `YOUTUBE_API_KEY=...`, `YOUTUBE_RESEARCH_ENABLED=true`, `RESEARCH_PROVIDER=youtube`, `TEST_RESEARCH_MODE=false`.
