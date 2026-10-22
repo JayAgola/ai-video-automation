@@ -66,8 +66,6 @@ deterministic mocks, no Ollama) and `python tests/test_script_robust.py`.
   `selected_topic.json`, `seo.json`, `research_report.md` (explains WHY a topic was chosen).
 - Native default niche is **Modern Stoicism + Applied Psychology**, fully configurable.
 
-
-
 ## Scoring formula (documented, internal heuristic)
 ```
 score = 0.25*trend + 0.20*freshness + 0.20*search_intent + 0.15*engagement
@@ -92,9 +90,6 @@ YOUTUBE_MAX_QUERIES_PER_RUN=10
 TOPIC_COUNT=12
 RESEARCH_QUERIES=stoicism anxiety,stoicism overthinking,...   # optional override
 ```
-
-
-
 
 ## YouTube API setup (real research)
 1. Create a Google Cloud project, enable YouTube Data API v3, create an API key.
@@ -153,7 +148,6 @@ Config: `DASHBOARD_HOST`, `DASHBOARD_PORT` (`.env`), `LOGS_DIR` for `logs/pipeli
   - `GET /api/v1/dashboard/projects/{project_id}/logs?limit=&level=&component=`
   - `GET /api/v1/dashboard/system` (Ollama reachability check only — no model calls)
   - `GET /` serves the static frontend.
-
 
 ### Behavior
 - Consumes existing `projects/*/state.json` via `ProjectManager`; works with any Parts 1–3 project; corrupt/missing state shows "State unavailable" without crashing the list.
