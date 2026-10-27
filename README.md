@@ -178,6 +178,10 @@ reviewer, note, timestamp); reset sends APPROVED/REJECTED back to PENDING with a
 - `POST /api/v1/dashboard/projects/{id}/review/reset` — body `{"note": "..."}` (optional); APPROVED/REJECTED → PENDING.
 `GET /projects` now includes `review_status`; `GET /projects/{id}` includes full `review` + `seo`.
 
+
+
+
+
 ### UI
 - Project detail adds **Human Review** section (status badge, reviewer/note/time, note textarea,
   APPROVE/REJECT buttons with confirm dialogs, SEND BACK TO REVIEW, history list) and a
