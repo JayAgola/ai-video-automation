@@ -128,7 +128,6 @@ python pipeline.py --project video_001 --topic "Your topic"
 - YouTube `DISABLED`/`AUTH_OR_QUOTA` → set key, check quota, or use test mode.
 - Independently verified: Parts 1/2 media pipeline still passes after Part 3.
 
-
 ## Part 4 Prompt 1 — Dashboard Foundation (new)
 Local web dashboard (read-only; no generation, no upload, no auth yet).
 ### Run
@@ -148,8 +147,6 @@ Config: `DASHBOARD_HOST`, `DASHBOARD_PORT` (`.env`), `LOGS_DIR` for `logs/pipeli
   - `GET /api/v1/dashboard/projects/{project_id}/logs?limit=&level=&component=`
   - `GET /api/v1/dashboard/system` (Ollama reachability check only — no model calls)
   - `GET /` serves the static frontend.
-
-
 
 ### Behavior
 - Consumes existing `projects/*/state.json` via `ProjectManager`; works with any Parts 1–3 project; corrupt/missing state shows "State unavailable" without crashing the list.
@@ -177,10 +174,6 @@ reviewer, note, timestamp); reset sends APPROVED/REJECTED back to PENDING with a
 - `POST /api/v1/dashboard/projects/{id}/review/reject` — body `{"note": "..."}` (**note required**, 422 otherwise).
 - `POST /api/v1/dashboard/projects/{id}/review/reset` — body `{"note": "..."}` (optional); APPROVED/REJECTED → PENDING.
 `GET /projects` now includes `review_status`; `GET /projects/{id}` includes full `review` + `seo`.
-
-
-
-
 
 ### UI
 - Project detail adds **Human Review** section (status badge, reviewer/note/time, note textarea,
