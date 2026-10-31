@@ -127,13 +127,10 @@ python pipeline.py --project video_001 --topic "Your topic"
 - API key only in `.env` (git-ignored). Errors redact credentials.
 - No transcript downloading, no copying competitor narration/structure, no scraping bypass.
 - `originality_check` flags near-verbatim title similarity as a heuristic only.
-
 ## Troubleshooting
 - `RESEARCH PROVIDER NOT CONFIGURED` → wrong `RESEARCH_PROVIDER`.
 - YouTube `DISABLED`/`AUTH_OR_QUOTA` → set key, check quota, or use test mode.
 - Independently verified: Parts 1/2 media pipeline still passes after Part 3.
-
-
 
 ## Part 4 Prompt 1 — Dashboard Foundation (new)
 Local web dashboard (read-only; no generation, no upload, no auth yet).
@@ -143,8 +140,6 @@ Local web dashboard (read-only; no generation, no upload, no auth yet).
 python -m app.dashboard.server        # http://127.0.0.1:8000
 ```
 Config: `DASHBOARD_HOST`, `DASHBOARD_PORT` (`.env`), `LOGS_DIR` for `logs/pipeline.log`.
-
-
 
 ### Pages / APIs
 - Main page: project counts (total/active/completed/failed), project table (id, topic, status, current step, %, scenes, updated), system status line.
