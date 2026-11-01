@@ -111,15 +111,12 @@ python pipeline.py --project video_001 --topic "Your topic"
 ```
 `--force-research` / `--force-topic` / `--force-seo` bypass per-step cache (only used deliberately).
 
-
-
-
-
-
 ## Cache / resume
 - Repeated identical research → cache HIT, no API/LLM recall.
 - `RESEARCH → TOPIC_DISCOVERY → TOPIC_RANKING → TOPIC_SELECTED → SEO_GENERATION` are each resumable;
   a crash before SEO resumes at SEO. Manual `--topic` marks research steps skipped.
+
+
 
 
 
@@ -135,6 +132,8 @@ python pipeline.py --project video_001 --topic "Your topic"
 ## Part 4 Prompt 1 — Dashboard Foundation (new)
 Local web dashboard (read-only; no generation, no upload, no auth yet).
 ### Run
+
+
 
 ```powershell
 python -m app.dashboard.server        # http://127.0.0.1:8000
