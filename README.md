@@ -116,10 +116,6 @@ python pipeline.py --project video_001 --topic "Your topic"
 - `RESEARCH → TOPIC_DISCOVERY → TOPIC_RANKING → TOPIC_SELECTED → SEO_GENERATION` are each resumable;
   a crash before SEO resumes at SEO. Manual `--topic` marks research steps skipped.
 
-
-
-
-
 ## Security & originality
 - API key only in `.env` (git-ignored). Errors redact credentials.
 - No transcript downloading, no copying competitor narration/structure, no scraping bypass.
