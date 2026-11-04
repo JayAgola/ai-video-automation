@@ -65,14 +65,12 @@ deterministic mocks, no Ollama) and `python tests/test_script_robust.py`.
 - **Outputs** in `projects/<id>/research/`: `trends.json`, `topics.json`, `ranked.json`,
   `selected_topic.json`, `seo.json`, `research_report.md` (explains WHY a topic was chosen).
 - Native default niche is **Modern Stoicism + Applied Psychology**, fully configurable.
-
 ## Scoring formula (documented, internal heuristic)
 ```
 score = 0.25*trend + 0.20*freshness + 0.20*search_intent + 0.15*engagement
         + 0.10*content_gap + 0.10*originality − competition/10
 ```
 Component scores stored on each candidate so users can see WHY it ranked.
-
 ## Configuration (.env) — new Part 3 keys
 ```
 CHANNEL_NICHE=Modern Stoicism and Applied Psychology
@@ -96,8 +94,6 @@ RESEARCH_QUERIES=stoicism anxiety,stoicism overthinking,...   # optional overrid
 2. Put it in `.env`: `YOUTUBE_API_KEY=...`, `YOUTUBE_RESEARCH_ENABLED=true`, `RESEARCH_PROVIDER=youtube`, `TEST_RESEARCH_MODE=false`.
 3. Quota is limited (search=100 units, videos=1 unit). The cache and bounded result/query counts keep calls low.
 4. Without a key, research returns `DISABLED/NO_API_KEY` and the system still supports test mode and manual `--topic`.
-
-
 
 ## Run
 ```powershell
@@ -128,8 +124,6 @@ python pipeline.py --project video_001 --topic "Your topic"
 ## Part 4 Prompt 1 — Dashboard Foundation (new)
 Local web dashboard (read-only; no generation, no upload, no auth yet).
 ### Run
-
-
 
 ```powershell
 python -m app.dashboard.server        # http://127.0.0.1:8000
