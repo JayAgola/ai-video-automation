@@ -182,6 +182,8 @@ reviewer, note, timestamp); reset sends APPROVED/REJECTED back to PENDING with a
 ### Reviewer identity
 `local_user` constant — **not authentication**; real auth comes in a later Part 4 prompt.
 
+
+
 ### Tests
 `tests/test_p4_review.py` (init matrices, approve/reject/reset, invalid transitions, history,
 refresh persistence, traversal, corrupt/missing state, API, video endpoint, frontend static checks)
@@ -202,12 +204,18 @@ in tests** — a deterministic mock client (`TEST_YOUTUBE_MODE=true`) stands in.
 ### Upload gate (no bypass)
 Service **and** uploader independently enforce: valid project, `final_video.mp4` present, `is_approved_for_publishing(project_id) == "APPROVED"`, OAuth connected, `youtube.status != "UPLOADED"`. Default privacy = `private`.
 
+
+
 ### Credentials
 - OAuth client secret file via `YOUTUBE_CLIENT_SECRET_FILE` (`.env`); tokens only in `YOUTUBE_TOKEN_FILE` (git-ignored).
 - `state.json` → `youtube`: `{status, video_id, url, privacy_status, title, uploaded_at}` — **never** access/refresh tokens or secrets.
 
+
+
 ### Security
 Secrets never appear in API responses, logs, state, dashboard HTML, or Git; project IDs validated; traversal blocked; no shell execution; bounded retries for transient failures.
+
+
 
 
 ### Setup (real use)
