@@ -174,13 +174,19 @@ reviewer, note, timestamp); reset sends APPROVED/REJECTED back to PENDING with a
   **Video Review** section with an inline `<video>` player + duration/size.
 - All rendering is HTML-escaped (`esc()` + `textContent`-style building) — fixes the Prompt 1 innerHTML issue.
 
+
+
 ### Implementation
 - `app/dashboard/review.py` — pure review state machine on top of the existing `StateManager`
   (atomic save, history append, `is_approved_for_publishing()` helper for the future publisher).
 - Review actions are logged via the existing logger (`[REVIEW] Human review ... for project ...`).
 
+
+
 ### Reviewer identity
 `local_user` constant — **not authentication**; real auth comes in a later Part 4 prompt.
+
+
 
 
 
